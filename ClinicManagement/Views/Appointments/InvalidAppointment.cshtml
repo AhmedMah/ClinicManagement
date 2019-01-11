@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "InvalidAppointment";
+    Layout = "~/Views/Shared/_LayoutOut.cshtml";
+}
+
+
+<div class="col-md-12">
+    <div class="col-middle">
+        <div class="text-center text-center">
+            <h1 class="error-number">OOPS</h1>
+            <h2>Sorry the entered date and time is already booked!</h2>
+            <p>
+                Please select a valid date and time 
+            </p>
+            <div class="mid_center">
+                <a href="@Url.Action("Index", "Patients")" class="btn btn-primary btn-sm"><i class="fa fa-angle-double-left"></i>Back</a>
+
+            </div>
+        </div>
+    </div>
+</div>

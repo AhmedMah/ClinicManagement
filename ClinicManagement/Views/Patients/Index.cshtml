@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ClinicManagement.Core.Models.Patient>
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Patients</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_content">
+
+                <table id="patients" class="data table table-striped no-margin">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th><a href="@Url.Action("Create","Patients")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+
+    <script>
+        var popup;
+
+        $(document).ready(function () {
+            var table = $("#patients").DataTable({
+                ajax: {
+                    url: "/api/patients",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "token"
+                        
+                    },
+                    {
+                        data: "name"
+                    },
+                    {
+                        data: "phone",
+                        render: function (data) {
+                            return data.toString().replace(
+                              /(\d\d\d)(\d\d\d)(\d\d\d\d)/g, '$1-$2-$3');
+                        }
+                    },
+                    {
+                        data: "address"
+                    },
+                    {
+                        data: "cities.name"
+                    },
+                    {
+                        data: "id",
+                        render: function (data, type, patient) {
+                            return "<a href='/patients/details/ " + patient.id + "' class='btn btn-default btn-xs'>" + "<i class='fa fa-folder'></i>View</a>" +
+                                //"<button class= 'btn-link js-detail' data-detail-id=" + data + "><i class='fa fa-pencil-square'></i></button>" +
+                                "<button class= 'btn btn-danger btn-xs js-delete' data-patient-id=" + data + "><i class='fa fa-trash-o'></i>Delete</button>";
+                        }
+                    }
+
+                ]
+            });
+
+
+          
+
+
+            $("#patients").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure to delete this patient?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/patients/" + button.attr("data-patient-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+
+
+
+
+        });
+
+    </script>
+}
+
+
+

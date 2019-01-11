@@ -1,0 +1,87 @@
+﻿@model ClinicManagement.Core.ViewModel.DoctorFormViewModel
+
+@{
+    ViewBag.Title = "Doctor form";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h3>Add Doctor </h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+
+                @using (Html.BeginForm("RegisterDoctor", "Account",FormMethod.Post, new { @class = "form-horizontal form-label-left", autocomplete = "off" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.Id)
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">Name</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Name)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">Phone</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Phone)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">Specializations</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.DropDownListFor(m => m.Specialization, new SelectList(Model.Specializations, "Id", "Name"), "", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Specialization)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">Address</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.Address, new { @class = "form-control " })
+                            @Html.ValidationMessageFor(m => m.Address)
+                        </div>
+                    </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-3 col-xs-12">Email</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @Html.TextBoxFor(m => m.RegisterViewModel.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.RegisterViewModel.Email)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3 col-xs-12">Password</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @Html.PasswordFor(m => m.RegisterViewModel.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.RegisterViewModel.Password)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3 col-xs-12">Confirm Password</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @Html.PasswordFor(m => m.RegisterViewModel.ConfirmPassword, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.RegisterViewModel.ConfirmPassword)
+                                </div>
+                            </div>
+
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

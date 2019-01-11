@@ -1,0 +1,161 @@
+﻿@model ClinicManagement.Core.ViewModel.AppointmentFormViewModel
+@{
+    ViewBag.Title = Model.Heading;
+}
+<link href="~/Content/gridDoctor.css" rel="stylesheet" />
+@using (Html.BeginForm("Create", "Appointments", FormMethod.Post, new { @class = "form-horizontal form-label-left", autocomplete = "off" }))
+{
+
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    @*@Html.HiddenFor(m => m.Doctor)*@
+    @Html.HiddenFor(m => m.Patient)
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <br />
+                    <span class="section">Doctor info</span>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Doctor</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.DropDownListFor(m => m.Doctor, new SelectList(Model.Doctors, "Id", "Name"), "Select one", new { @class = "form-control", id = "DoctorID" })
+                            @Html.ValidationMessageFor(m => m.Doctor, string.Empty, new { @class = "" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            @*<div class="x_panel">
+                <div class="x_content">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Doctors">Doctors</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <select id="DoctorID" name="Doctors" class="form-control"></select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>*@
+            <div class="x_panel">
+                <div class="x_content">
+                    <div id="divAppointments"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <br />
+                    <span class="section">Appointment </span>
+                    @ViewBag.message
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date<span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextBoxFor(m => m.Date, new { @class = "form-control date" })
+                            @Html.ValidationMessageFor(m => m.Date)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Time<span class="required">*</span> </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextBoxFor(m => m.Time, new { @class = "form-control time" })
+                            @Html.ValidationMessageFor(m => m.Time)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Details <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextAreaFor(m => m.Detail, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Detail)
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-6">
+                            @*<a href="@Url.Action("Index", "Patients")" class="btn btn-primary">Back</a>*@
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+}
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $('#divAppointments').hide();
+
+            var URL = '/appointments/DoctorsList/';
+            $.getJSON(URL, function (data) {
+                var items = '<option value="">Select Doctor</option>';
+                $.each(data, function (i, doctor) {
+                    items += "<option value='" + doctor.Value + "'>" + doctor.Text
+                    + "</option>";
+                });
+                $('#DoctorID').html(items);
+            });
+
+
+            $('#DoctorID').change(function () {
+                var URL = '/appointments/GetUpcommingAppointments/' + $('#DoctorID').val();
+
+                $.ajax({
+                    url: URL,
+                    contentType: 'application/html; charset=utf-8',
+                    type: 'GET',
+                    dataType: 'html'
+
+                })
+                .success(function (result) {
+                    $('#divAppointments').show();
+                    $('#divAppointments').html(result);
+                })
+                .error(function (xhr, status) {
+                    alert(status);
+                })
+
+            });
+
+
+        });
+
+        $('.date').datepicker({
+            minDate: 0,
+            format: "dd/mm/yyyy",
+            todayHighlight: true,
+            clearBtn: true,
+            orientation: "bottom left",
+            autoclose: true
+        });
+        $('.time').clockpicker({
+            placement: 'bottom',
+            align: 'left',
+            donetext: 'Done',
+            twentyfourhour: true
+        });
+
+        jQuery.validator.methods.date = function (value, element) {
+            var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+            if (isChrome) {
+                var d = new Date();
+                return this.optional(element) || !/Invalid|NaN/.test(new Date(d.toLocaleDateString(value)));
+            } else {
+                return this.optional(element) || !/Invalid|NaN/.test(new Date(value));
+            }
+        };
+
+    </script>
+
+}
+
+
+

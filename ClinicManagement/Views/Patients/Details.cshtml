@@ -1,0 +1,209 @@
+﻿@using ClinicManagement.Core.Models
+@model ClinicManagement.Core.ViewModel.PatientDetailViewModel
+@{
+    ViewBag.Title = "Details";
+}
+<!-- load partial here-->
+<div id="MyModal" class="modal fade in">
+        <div class="modal-dialog "style="width: 900px;">
+            <div class="modal-content">
+                <div id="MyModalContent"></div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Details</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            @*<div class="x_title">
+                <h2>Patient Details </h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li> <a href="@Url.Action("Edit", "Patients", new { id= Model.Patient.Id})" class="btn-link"><i class="fa fa-edit m-right-xs"></i>Edit</a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>*@
+
+            <div class="x_content">
+                <div class="col-md-3 col-sm-3 col-xs-12 profile_left ">
+                    <div class="profile_img">
+                        <div id="crop-avatar">
+                            <!-- Current avatar -->
+                            <img class="img-responsive avatar-view" src="~/Content/images/user.png">
+                        </div>
+                    </div>
+                    <h3>@Model.Patient.Name</h3>
+                    <ul class="list-unstyled user_data">
+                        <li> <i class="fa fa-user"><strong>Token:</strong> @Model.Patient.Token</i></li>
+                        <li> <i class="fa fa-user"><strong>Sex:</strong> @Model.Patient.Sex</i></li>
+                        <li> <i class="fa fa-user"><strong>Age:</strong> @Model.Patient.Age</i></li>
+                        <li> <i class="fa fa-user"><strong>Height:</strong> @Model.Patient.Height</i></li>
+                        <li> <i class="fa fa-user"><strong>Weight:</strong> @Model.Patient.Weight</i></li>
+                        <li>
+                            <i class="fa fa-map-marker user-profile-icon"></i><strong>Address:</strong> @Model.Patient.Address, @Model.Patient.Cities.Name
+                        </li>
+
+                        <li>
+                            <i class="fa fa-phone"></i><strong>Phone:</strong> @Model.Patient.Phone
+                        </li>
+                        <li class="m-top-xs">
+                            <i class="fa fa-clock-o"></i><strong>Date :</strong> @Model.Patient.DateTime.ToString("MMM"), @Model.Patient.DateTime.ToString("d ")- @Model.Patient.DateTime.ToString("yyyy")-@Model.Patient.DateTime.ToString("HH:mm")
+
+                        </li>
+                    </ul>
+                    <a href="@Url.Action("Edit", "Patients", new { id= Model.Patient.Id})" class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit</a>
+
+                    <br/>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                       <span class="section"> Appointment</span>
+                      <a id="patientID" data-appointment-id="@Model.Patient.Id" href="#"> Patient Appointment</a>  <span class="badge badge-error">@Model.CountAppointments</span> @if (User.IsInRole(RoleName.AdministratorRoleName))
+                                                                                                                                                                                   {
+                                                                                                                                                                                       <a href="@Url.Action("Create", "Appointments", new {id = Model.Patient.Id})"><i class="fa fa-plus"></i></a>
+                                                                                                                                                                                   }
+                    </div>          
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                       <span class="section">Attendance </span>
+                        <a id="attendanceID" data-attendance-id="@Model.Patient.Id" href="#"> Lab Attendance </a> <span class="badge badge-error">@Model.CountAttendance</span> <a href="@Url.Action("Create", "Attendances", new { id=Model.Patient.Id})"> <i class="fa fa-plus"></i></a>
+                    </div>
+                    @*<div class="" role="tabpanel" data-example-id="togglable-tabs">
+                        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Appointment history</a>
+
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Attendance history</a>                            
+                                </li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                                <!-- start appointment history -->
+                                <table class="data table table-striped no-margin dataTables">
+                                    <thead>
+                                        <tr>
+                                            <th>Doctor</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Details</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.Appointments)
+                                        {
+                                            <tr>
+                                                <td>@item.Doctor.Name</td>
+                                                <td>@item.StartDateTime.ToString("MMM"),@item.StartDateTime.ToString("d ")-@item.StartDateTime.ToString("yyyy")</td>
+                                                <td>@item.StartDateTime.ToString("HH:mm")</td>
+                                                <td>@item.Detail</td>
+                                                <td>
+                                                    @{
+                                                        if (item.Status == true)
+                                                        {
+                                                            <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Approved</a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="#" style="padding: 3px 10px 3px 10px; background-color:greenyellow " class="badge" readonly>Pending</a>
+                                                        }
+                                                    }
+                                                </td>
+
+                                            </tr>
+
+                                                        }
+                                    </tbody>
+                                </table>
+                                <!-- end appointment history -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                                <table class="data table table-striped no-margin dataTables">
+                                    <thead>
+                                    <tr>
+                                        <th>Clinic Remarks</th>
+                                        <th>Diagnosis</th>
+                                        <th>Second Diagnosis</th>
+                                        <th>Third Diagnosis</th>
+                                        <th>Therapy</th>
+                                        <th>Date</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach (var item in Model.Attendances)
+                                    {
+                                        <tr>
+                                            <td>@item.ClinicRemarks</td>
+                                            <td>@item.Diagnosis</td>
+                                            <td>@item.SecondDiagnosis</td>
+                                            <td>@item.ThirdDiagnosis</td>
+                                            <td>@item.Therapy</td>
+                                            <td>@item.Date.ToString("MMM"), @item.Date.ToString("d ")-@item.Date.ToString("yyyy")</td>
+                                        </tr>
+
+                                    }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function(){
+            $("#patientID").on("click", function () {
+                var link = $(this);
+                $.ajaxSetup({ cache: false });
+                var detailUrl = "/Appointments/Details/" + link.attr("data-appointment-id");
+                $("#MyModalContent").load(detailUrl, function () {
+                    $("#MyModal").modal({
+                        keyboard: false
+                    }, 'show');
+
+                });
+                return false;
+            });
+            $("#attendanceID").on("click", function () {
+                var link = $(this);
+                $.ajaxSetup({ cache: false });
+                var detailUrl = "/Attendances/Details/" + link.attr("data-attendance-id");
+                $("#MyModalContent").load(detailUrl, function () {
+                    $("#MyModal").modal({
+                        keyboard: false
+                    }, 'show');
+
+                });
+                return false;
+            });
+
+
+        });
+
+        $('.dataTables').DataTable({
+            "scrollY": "300px",
+            "scrollCollapse": true,
+            "paging": false,
+            "filter": false,
+            "info": false
+        });
+    </script>
+ 
+}
+
+
+
+
+

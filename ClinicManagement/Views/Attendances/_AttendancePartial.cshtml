@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ClinicManagement.Core.Models.Attendance>
+@{
+    Layout = null;
+}
+
+<div class="col-md-12">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="x_title">Attandences</h4>
+        </div>
+
+        <div class="modal-body">
+
+            <table class="data table table-striped no-margin dataTables">
+                <thead>
+                    <tr>
+                        <th>Clinic Remarks</th>
+                        <th>Diagnosis</th>
+                        <th>Second Diagnosis</th>
+                        <th>Third Diagnosis</th>
+                        <th>Therapy</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ClinicRemarks</td>
+                            <td>@item.Diagnosis</td>
+                            <td>@item.SecondDiagnosis</td>
+                            <td>@item.ThirdDiagnosis</td>
+                            <td>@item.Therapy</td>
+                            <td>@item.Date.ToString("MMM"), @item.Date.ToString("d ")-@item.Date.ToString("yyyy")</td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+
+        </div>>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ClinicManagement.Core.Models.Appointment>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- top tiles -->
+<div class="row top_tiles">
+    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
+            <div class="count patients"></div>
+            <h3>Total Patients</h3>
+            <p class="count_bottom"><i class="green todayspatients"> </i> Added From Today</p>
+        </div>
+    </div>
+    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-comments-o"></i></div>
+            <div class="count appointments"></div>
+            <h3>Total Appointments</h3>
+            <p class="count_bottom"><i class="green todaysappointments"> </i>  For Today</p>
+        </div>
+    </div>
+    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+            <div class="count doctors"></div>
+            <h3>Total Doctors</h3>
+            <p class="count_bottom"><i class="green availabledoctors"> </i> Doctors Available</p>
+        </div>
+    </div>
+    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-check-square-o"></i></div>
+            <div class="count users"></div>
+            <h3>Total Users</h3>
+            <p class="count_bottom"><i class="green activeaccounts"> </i> Active Accounts</p>
+        </div>
+    </div>
+</div>
+<!-- /top tiles -->
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            //render total patient
+            $.get('../../../Home/TotalPatients', null, function (data) {
+                $('.patients').append(data);
+            }, 'json');
+
+            //render total apointments
+            $.get('../../../Home/TotalAppointments', null, function (data) {
+                $('.appointments').append(data);
+            }, 'json');
+            //render total doctors
+            $.get('../../../Home/TotalDoctors', null, function (data) {
+                $('.doctors').append(data);
+            }, 'json');
+            //render total users
+            $.get('../../../Home/TotalUsers', null, function (data) {
+                $('.users').append(data);
+            }, 'json');
+            //render todays patients
+            $.get('../../../Home/TodaysPatients', null, function (data) {
+                $('.todayspatients').append(data);
+            }, 'json');
+            //Today's appointments
+            $.get('../../../Home/TodaysAppointments', null, function (data) {
+                $('.todaysappointments').append(data);
+            }, 'json');
+            //render available doctors
+            $.get('../../../Home/AvailableDoctors', null, function (data) {
+                $('.availabledoctors').append(data);
+            }, 'json');
+            //ActiveAccounts
+            $.get('../../../Home/ActiveAccounts', null, function (data) {
+                $('.activeaccounts').append(data);
+            }, 'json');
+            
+
+        });
+    </script>
+}

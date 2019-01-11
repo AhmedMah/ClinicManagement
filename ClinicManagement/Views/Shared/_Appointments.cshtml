@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ClinicManagement.Core.Models.Appointment>
+@{
+    Layout = null;
+}
+<div class="col-md-12">
+    <div class="x_panel">
+
+        <div class="x_content">
+            <table id="appointments" class="table table-striped table-bordered dataTable">
+                <thead>
+                    <tr>
+                        <th>Token</th>
+                        <th>Patient name</th>
+                        <th>Phone</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Doctor</th>
+                        <th>Detail</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Patient.Token</td>
+                            <td>@item.Patient.Name</td>
+                            <td>@item.Patient.Phone</td>
+                            <td>@item.StartDateTime.ToString("MMM")-@item.StartDateTime.ToString("d ")-@item.StartDateTime.ToString("yyyy")</td>
+                            <td>@item.StartDateTime.ToString("HH:mm")</td>
+                            <td>@item.Doctor.Name</td>
+                            <td>@item.Detail</td>
+                            <td>
+                                @{
+                                if (item.Status == true)
+                                {
+                                    <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Approved</a>
+                                }
+                                else
+                                {
+                                    <a href="#" style="padding: 3px 10px 3px 10px; background-color:greenyellow " class="badge" readonly>Pending</a>
+                                }
+                            }
+                        </td>
+                    </tr>
+                                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $('.dataTable').DataTable({
+            "scrollY": "300px",
+            "scrollCollapse": true,
+            "paging": false,
+            "filter": false,
+            "info": false,
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    });
+</script>

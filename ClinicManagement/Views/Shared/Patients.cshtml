@@ -1,0 +1,80 @@
+﻿@model ClinicManagement.Core.ViewModel.DoctorDetailViewModel
+@{
+    ViewBag.Title = "Patients";
+    Layout = "~/Views/Shared/_LayoutOut.cshtml";
+}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title">Patients</h4>
+        </div>
+
+        <div class="x_content modal-body">
+            <table id="patients" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Token</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Details</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                @foreach (var item in Model.Appointments)
+                {
+                    <tr>
+                        <td>@item.Patient.Token</td>
+                        <td>@item.Patient.Name</td>
+                        <td>@item.Patient.Phone</td>
+                        <td>@item.StartDateTime.ToString("MMM")-@item.StartDateTime.ToString("d ")-@item.StartDateTime.ToString("yyyy")</td>
+                        <td>@item.StartDateTime.ToString("HH:mm")</td>
+                        <td>@item.Detail</td>
+                        @*<td><a href="@Url.Action("Create","OpdAttendances", new {id = item.Patient.Id})" class="btn-info btn-sm" ><i class="fa fa-plus"></i>OPD</a></td>*@
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts{
+<script>
+    $(document).ready(function() {
+        $("#patients").DataTable({
+            "scrollY": "300px",
+            "scrollCollapse": true,
+            "paging": false,
+            "filter": false,
+            "info": false
+
+        });
+    });
+        //$('.dataTables').DataTable({
+        //    "scrollY": "300px",
+        //    "scrollCollapse": true,
+        //    "paging": false,
+        //    "filter": false,
+        //    "info": false
+        //});
+
+</script>
+}
+
+
+
+

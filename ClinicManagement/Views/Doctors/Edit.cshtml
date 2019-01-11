@@ -1,0 +1,74 @@
+﻿@model ClinicManagement.Core.ViewModel.DoctorFormViewModel
+@{
+    ViewBag.Title = "Edit Doctor";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h3>Edit Doctor </h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="form-horizontal form-label-left">
+                @using (Html.BeginForm())
+                {
+                    @Html.HiddenFor(m => m.Id)
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">Name</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control col-md-7 col-xs-12" })
+                            @Html.ValidationMessageFor(m => m.Name)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">Specializations</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.DropDownListFor(m => m.Specialization, new SelectList(Model.Specializations, "Id", "Name"), "", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Specialization)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">Phone</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control col-md-7 col-xs-12" })
+                            @Html.ValidationMessageFor(m => m.Phone)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">Address</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.Address, new { @class = "form-control col-md-7 col-xs-12" })
+                            @Html.ValidationMessageFor(m => m.Address)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-12">Status</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="radio">
+                                <label> @Html.RadioButtonFor(model =>model.IsAvailable ,"true", new { @class = "flat" }) Available </label>
+                                <label> @Html.RadioButtonFor(model=>model.IsAvailable, "false", new { @class = "flat" }) Closed </label>
+                             </div>
+                        </div>
+                    </div>
+
+
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
+                                    <a href="@Url.Action("Details","Doctors", new{id =Model.Id})"class="btn btn-default">Back</a>
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+
+                }
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+

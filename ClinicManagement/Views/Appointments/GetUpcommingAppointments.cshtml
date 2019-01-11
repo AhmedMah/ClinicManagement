@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ClinicManagement.Core.Models.Appointment>
+
+<table class="data table table-striped no-margin">
+    <tr>
+        <th>Patient name</th>
+        <th>Date</th>
+        <th>Time</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.Patient.Name</td>
+        <td>@item.StartDateTime.ToString("MMM")-@item.StartDateTime.ToString("d ")-@item.StartDateTime.ToString("yyyy")</td>
+        <td>@item.StartDateTime.ToString("HH:mm")</td>
+    </tr>
+}
+
+</table>

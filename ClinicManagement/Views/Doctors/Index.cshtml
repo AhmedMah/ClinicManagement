@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ClinicManagement.Core.Models.Doctor>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="page-title">
+    <div class="title_left">
+        <h3>Doctors</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+        <div class="x_content">
+            <table id="doctors" class="data table table-striped no-margin">
+                <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th>Phone </th>
+                        <th>Specialization </th>
+                        <th>Status</th>
+                        <th>Account Status</th>
+                        <th><a href="@Url.Action("RegisterDoctor","Account")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> @item.Name </td>
+                        <td>@item.Phone</td>
+                        <td> @item.Specialization.Name</td>
+                        <td>@{
+                                if (item.IsAvailable == true)
+                                 {
+                                     <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Available</a>
+                                 }
+                                 else
+                                 {
+                                     <a href="#" style="padding: 3px 10px 3px 10px; background-color:red " class="badge" readonly>Closed</a>
+                                 }
+                            }</td>
+                        <td>
+                            @{
+                                //cast to bool
+                                if ((bool) item.Physician.IsActive)
+                                {
+                                    <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Active</a>
+                                }
+                                else
+                                {
+                                    <a href="#" style="padding: 3px 10px 3px 10px; background-color:red " class="badge" readonly>locked</a>
+                                }
+                            }
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Details","Doctors", new { id = item.Id})" class="btn btn-default btn-xs"><i class="fa fa-folder"></i>Details</a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+  </div>
+
+
+        </div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#doctors").DataTable();
+        });
+    </script>
+    }

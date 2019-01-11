@@ -1,0 +1,88 @@
+﻿body.article {
+    font-family: "Montserrat Light", Helvetica, Arial, sans-serif
+}
+
+    body.article h1, body.article h2, body.article h3 {
+        color: #f90
+    }
+
+    body.article .path ul {
+        list-style: none;
+        margin-left: -12px;
+        border-left: 3px solid #f90
+    }
+
+        body.article .path ul li span {
+            margin-top: 5px;
+            display: inline-block
+        }
+
+        body.article .path ul li.folder::before {
+            content: url("../images/folder-opened-icon.png");
+            display: inline-block
+        }
+
+        body.article .path ul li.js::before {
+            content: url("../images/text-x-javascript-icon.png")
+        }
+
+        body.article .path ul li.html::before {
+            content: url("../images/html-icon.png")
+        }
+
+    body.article .grid {
+        border: 1px solid #236863
+    }
+
+        body.article .grid thead th {
+            background-color: #236863;
+            color: white;
+            padding: 5px;
+            min-width: 160px;
+            border: 0px;
+            margin: 0
+        }
+
+        body.article .grid tr td {
+            color: black
+        }
+
+        body.article .grid div {
+            width: 32px;
+            height: 32px;
+            display: block;
+            cursor: pointer
+        }
+
+            body.article .grid div.expanded {
+                background-image: url("../images/plus.png")
+            }
+
+                body.article .grid div.expanded:hover {
+                    background-image: url("../images/plus-hover.png")
+                }
+
+            body.article .grid div.collapsed {
+                background-image: url("../images/minus.png")
+            }
+
+                body.article .grid div.collapsed:hover {
+                    background-image: url("../images/minus-hover.png")
+                }
+
+        body.article .grid ul {
+            width: 90%;
+            border: 1px solid #236863;
+            margin: 0 auto;
+            border-radius: 5px;
+            padding: 11px;
+            list-style-type: none
+        }
+
+            body.article .grid ul.details-opened {
+                display: inline-block
+            }
+
+            body.article .grid ul.details-closed {
+                display: none
+            }

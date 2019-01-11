@@ -1,0 +1,78 @@
+﻿@model ClinicManagement.Core.ViewModel.AttendanceFormViewModel
+@{
+    ViewBag.Title = Model.Heading;
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h3>@Model.Heading </h3>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="x_content">
+                <div class="row" id="patientDetail">
+                    @*<h3> @ViewBag.Confirm </h3>*@
+                    @*@using (Ajax.BeginForm("Create", "Attendances", new AjaxOptions{InsertionMode = InsertionMode.Replace, UpdateTargetId = "patientDetail"}))*@
+                    @using (Html.BeginForm("Create", "Attendances", FormMethod.Post, new { @class = "form-horizontal form-label-left", autocomplete = "off" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Patient)
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Clinic Remarks</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextAreaFor(m => m.ClinicRemarks, new { @class = "form-control col-md-7 col-xs-12", @rows=8 })
+                                @Html.ValidationMessageFor(m => m.ClinicRemarks)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Diagnosis</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextAreaFor(m => m.Diagnosis, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.Diagnosis)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Second Diagnosis</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextAreaFor(m => m.SecondDiagnosis, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.SecondDiagnosis)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Third Diagnosis</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextAreaFor(m => m.ThirdDiagnosis, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.ThirdDiagnosis)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Therapy</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextAreaFor(m => m.Therapy, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.Therapy)
+                            </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

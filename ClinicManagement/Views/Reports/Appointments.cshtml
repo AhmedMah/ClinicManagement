@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ClinicManagement.Core.Models.Appointment>
+@{
+    ViewBag.Title = "Appointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #renderTable {
+        background-color: white;
+    }
+</style>
+<span class="section">Appointments</span>
+<div class="row">
+    <!-- form date pickers -->
+    <div class="well" style="overflow: auto">
+        <form id="form1">
+            <div class="col-sm-2">
+            </div>
+
+            <div class="col-sm-3">
+                <label>Select</label><br />
+                <select name="option" class="form-control">
+                    <option value="">--Select one--</option>
+                    <option value="ThisMonth">This Month </option>
+                    <option value="Pending">Pending </option>
+                    <option value="Approved">Approved </option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <label>Doctor </label>
+                <input type="text" name="name" class="form-control" placeholder="Enter doctor name" />
+            </div>
+            <div class="col-sm-3">
+                <label></label><br />
+                <input type="button" class="btn btn-primary" value="Submit" id="submit" />
+                <input type="button" class="btn btn-default" id="showAll" value="Show All" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div id="renderTable" class="x_content">
+                @Html.Partial("_Appointments")
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        //$('.datepicker').datepicker();
+
+        $(document).ready(function () {
+            $('#submit').on('click', function () {
+                $('#renderTable').load("TestAppointment", $('#form1').serialize());
+            });
+        });
+
+
+        $('#showAll').on('click', function () {
+            location.reload(true);
+        });
+    </script>
+
+}
+
