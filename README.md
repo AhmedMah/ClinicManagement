@@ -16,7 +16,7 @@ Clinic web application using Gentelella Admin templete
 
 Open project with Visual Studio
 In package manager console run the following commands
-    - [ ] enable-migrations
-    - [ ] add-migration "InitialDb"
-    - [ ] update-database
+    1. enable-migrations
+    2. add-migration "InitialDb"
+    3. update-database
 
