@@ -19,8 +19,6 @@ namespace ClinicManagement.Core.Models
         public string Height { get; set; }
         public string Weight { get; set; }
 
-        public ICollection<Appointment> Appointments { get; set; }
-        public ICollection<Attendance> Attendances { get; set; }
         public int Age
         {
             get
@@ -32,6 +30,9 @@ namespace ClinicManagement.Core.Models
             }
 
         }
+        public ICollection<Appointment> Appointments { get; set; }
+        public ICollection<Attendance> Attendances { get; set; }
+
         public Patient()
         {
             Appointments = new Collection<Appointment>();

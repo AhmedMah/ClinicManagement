@@ -770,6 +770,9 @@
     <Content Include="Content\iCheck\square\yellow.css" />
     <Content Include="Content\iCheck\square\yellow.png" />
     <Content Include="Content\iCheck\square\_all.css" />
+    <Content Include="Content\images\11.PNG" />
+    <Content Include="Content\images\9.PNG" />
+    <Content Include="Content\images\d1.PNG" />
     <Content Include="Content\images\loader4.gif" />
     <Content Include="Content\css\nprogress.css" />
     <Content Include="Content\images\user.png" />
