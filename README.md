@@ -7,10 +7,10 @@ Clinic web application using Gentelella Admin templete
 
 # Frameworks - Libraries
 
-1= ASP.NET MVC (version 5)
-2= Entity Framework
-3) Ninject
-4) Automapper
+1. ASP.NET MVC (version 5)
+2. Entity Framework
+3. Ninject
+4. Automapper
 
 # Running Project
 
