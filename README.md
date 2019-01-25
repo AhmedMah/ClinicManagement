@@ -21,3 +21,7 @@ In package manager console run the following commands
     -  add-migration "InitialDb"
     -  update-database
 
+Open the database
+in AspNetRoles table add  Administrator and Doctor.
+
+Run the project. Go to   http://localhost:xxxx/Account/Register  to add admin user.
