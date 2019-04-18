@@ -13,7 +13,6 @@ namespace ClinicManagement.Persistence
         public ICityRepository Cities { get; private set; }
         public IDoctorRepository Doctors { get; private set; }
         public ISpecializationRepository Specializations { get; private set; }
-        public IPatientStatusRepository PatientStatus { get; private set; }
         public IApplicationUserRepository Users { get; private set; }
 
         public UnitOfWork(ApplicationDbContext context)
@@ -25,7 +24,6 @@ namespace ClinicManagement.Persistence
             Cities = new CityRepository(context);
             Doctors = new DoctorRepository(context);
             Specializations = new SpecializationRepository(context);
-            PatientStatus = new PatientStatusRepository(context);
             Users = new ApplicationUserRepository(context);
 
         }

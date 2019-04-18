@@ -10,7 +10,6 @@ namespace ClinicManagement.Core
         ICityRepository Cities { get; }
         IDoctorRepository Doctors { get; }
         ISpecializationRepository Specializations { get; }
-        IPatientStatusRepository PatientStatus { get; }
         IApplicationUserRepository Users { get; }
 
         void Complete();

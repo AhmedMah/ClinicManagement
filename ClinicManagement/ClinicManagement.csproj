@@ -256,70 +256,6 @@
     <Compile Include="Core\ViewModel\AppointmentFormViewModel.cs" />
     <Compile Include="Core\ViewModel\DoctorDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\ValidDate.cs" />
-    <Compile Include="Migrations\201806210736135_AddAppointmentAndDoctorAvail.cs" />
-    <Compile Include="Migrations\201806210736135_AddAppointmentAndDoctorAvail.Designer.cs">
-      <DependentUpon>201806210736135_AddAppointmentAndDoctorAvail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806240945096_addPatientNavigationToAppointment.cs" />
-    <Compile Include="Migrations\201806240945096_addPatientNavigationToAppointment.Designer.cs">
-      <DependentUpon>201806240945096_addPatientNavigationToAppointment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807020415322_addAppointmentLength.cs" />
-    <Compile Include="Migrations\201807020415322_addAppointmentLength.Designer.cs">
-      <DependentUpon>201807020415322_addAppointmentLength.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807020453235_addAppointmentStatus.cs" />
-    <Compile Include="Migrations\201807020453235_addAppointmentStatus.Designer.cs">
-      <DependentUpon>201807020453235_addAppointmentStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807211511147_dropAppointmentlenght.cs" />
-    <Compile Include="Migrations\201807211511147_dropAppointmentlenght.Designer.cs">
-      <DependentUpon>201807211511147_dropAppointmentlenght.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807221612460_dropPatientStatusFromAppt.cs" />
-    <Compile Include="Migrations\201807221612460_dropPatientStatusFromAppt.Designer.cs">
-      <DependentUpon>201807221612460_dropPatientStatusFromAppt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808100646153_addAddressToDoctor.cs" />
-    <Compile Include="Migrations\201808100646153_addAddressToDoctor.Designer.cs">
-      <DependentUpon>201808100646153_addAddressToDoctor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808181432118_AddDetailToAppointment.cs" />
-    <Compile Include="Migrations\201808181432118_AddDetailToAppointment.Designer.cs">
-      <DependentUpon>201808181432118_AddDetailToAppointment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808191430039_AddAppointmentStatusToAppointment.cs" />
-    <Compile Include="Migrations\201808191430039_AddAppointmentStatusToAppointment.Designer.cs">
-      <DependentUpon>201808191430039_AddAppointmentStatusToAppointment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808210649470_RenameOpdAttandenceToAttendance.cs" />
-    <Compile Include="Migrations\201808210649470_RenameOpdAttandenceToAttendance.Designer.cs">
-      <DependentUpon>201808210649470_RenameOpdAttandenceToAttendance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808290402308_addNameToApplicationUser.cs" />
-    <Compile Include="Migrations\201808290402308_addNameToApplicationUser.Designer.cs">
-      <DependentUpon>201808290402308_addNameToApplicationUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808301448049_AddPatientAttandenceRelationship.cs" />
-    <Compile Include="Migrations\201808301448049_AddPatientAttandenceRelationship.Designer.cs">
-      <DependentUpon>201808301448049_AddPatientAttandenceRelationship.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808301500573_MakePatientIdFKRequired.cs" />
-    <Compile Include="Migrations\201808301500573_MakePatientIdFKRequired.Designer.cs">
-      <DependentUpon>201808301500573_MakePatientIdFKRequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808311922537_addDobToPatient.cs" />
-    <Compile Include="Migrations\201808311922537_addDobToPatient.Designer.cs">
-      <DependentUpon>201808311922537_addDobToPatient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809011405256_dropDobFromPatientTB.cs" />
-    <Compile Include="Migrations\201809011405256_dropDobFromPatientTB.Designer.cs">
-      <DependentUpon>201809011405256_dropDobFromPatientTB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901031533378_dropAssistantTb.cs" />
-    <Compile Include="Migrations\201901031533378_dropAssistantTb.Designer.cs">
-      <DependentUpon>201901031533378_dropAssistantTb.cs</DependentUpon>
-    </Compile>
     <Compile Include="Persistence\EntityConfigurations\AppointmentConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CityConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\DoctorConfiguration.cs" />
@@ -328,34 +264,6 @@
     <Compile Include="Persistence\EntityConfigurations\SpecializationConfiguration.cs" />
     <Compile Include="Core\Helpers\ClinicMgtHelpers.cs" />
     <Compile Include="Core\Helpers\EnumHelpers.cs" />
-    <Compile Include="Migrations\201805290637135_AddIsActiveToApplicationUsers.cs" />
-    <Compile Include="Migrations\201805290637135_AddIsActiveToApplicationUsers.Designer.cs">
-      <DependentUpon>201805290637135_AddIsActiveToApplicationUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805290719331_MakeIsActiveNullable.cs" />
-    <Compile Include="Migrations\201805290719331_MakeIsActiveNullable.Designer.cs">
-      <DependentUpon>201805290719331_MakeIsActiveNullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806060718571_addAssistant.cs" />
-    <Compile Include="Migrations\201806060718571_addAssistant.Designer.cs">
-      <DependentUpon>201806060718571_addAssistant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806111714197_replacePrescriptionToOpd.cs" />
-    <Compile Include="Migrations\201806111714197_replacePrescriptionToOpd.Designer.cs">
-      <DependentUpon>201806111714197_replacePrescriptionToOpd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806111720558_PopulateCities.cs" />
-    <Compile Include="Migrations\201806111720558_PopulateCities.Designer.cs">
-      <DependentUpon>201806111720558_PopulateCities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806171814506_addPatientStatus.cs" />
-    <Compile Include="Migrations\201806171814506_addPatientStatus.Designer.cs">
-      <DependentUpon>201806171814506_addPatientStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806171842305_populatePatientStatuses.cs" />
-    <Compile Include="Migrations\201806171842305_populatePatientStatuses.Designer.cs">
-      <DependentUpon>201806171842305_populatePatientStatuses.cs</DependentUpon>
-    </Compile>
     <Compile Include="Core\Models\City.cs" />
     <Compile Include="Core\Models\Gender.cs" />
     <Compile Include="Core\Models\RoleName.cs" />
@@ -371,11 +279,9 @@
     <Compile Include="Core\Repositories\IDoctorRepository.cs" />
     <Compile Include="Core\Repositories\IPatientRepository.cs" />
     <Compile Include="Core\Repositories\IAttendanceRepository.cs" />
-    <Compile Include="Core\Repositories\IPatientStatusRepository.cs" />
     <Compile Include="Core\Repositories\ISpecializationRepository.cs" />
     <Compile Include="Persistence\Repositories\PatientRepository.cs" />
     <Compile Include="Persistence\Repositories\AttendanceRepository.cs" />
-    <Compile Include="Persistence\Repositories\PatientStatusRepository.cs" />
     <Compile Include="Persistence\Repositories\SpecializationRepository.cs" />
     <Compile Include="Core\ViewModel\UserViewModel.cs" />
     <Compile Include="Core\ViewModel\DoctorFormViewModel.cs" />
@@ -390,67 +296,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803191753437_InitialModel.cs" />
-    <Compile Include="Migrations\201803191753437_InitialModel.Designer.cs">
-      <DependentUpon>201803191753437_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803200819525_createPatientTable.cs" />
-    <Compile Include="Migrations\201803200819525_createPatientTable.Designer.cs">
-      <DependentUpon>201803200819525_createPatientTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803200844272_OverrideConventionsForPatient.cs" />
-    <Compile Include="Migrations\201803200844272_OverrideConventionsForPatient.Designer.cs">
-      <DependentUpon>201803200844272_OverrideConventionsForPatient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803221358163_addDateTimeFieldToPatientTable.cs" />
-    <Compile Include="Migrations\201803221358163_addDateTimeFieldToPatientTable.Designer.cs">
-      <DependentUpon>201803221358163_addDateTimeFieldToPatientTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804241358182_dropTokenTable.cs" />
-    <Compile Include="Migrations\201804241358182_dropTokenTable.Designer.cs">
-      <DependentUpon>201804241358182_dropTokenTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804301730113_AddDateToBill.cs" />
-    <Compile Include="Migrations\201804301730113_AddDateToBill.Designer.cs">
-      <DependentUpon>201804301730113_AddDateToBill.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805041134288_ChangeBillToPrescription.cs" />
-    <Compile Include="Migrations\201805041134288_ChangeBillToPrescription.Designer.cs">
-      <DependentUpon>201805041134288_ChangeBillToPrescription.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805051343194_RemoveStringLengthFromMedicine.cs" />
-    <Compile Include="Migrations\201805051343194_RemoveStringLengthFromMedicine.Designer.cs">
-      <DependentUpon>201805051343194_RemoveStringLengthFromMedicine.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805061531423_AddDoctor.cs" />
-    <Compile Include="Migrations\201805061531423_AddDoctor.Designer.cs">
-      <DependentUpon>201805061531423_AddDoctor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805061736020_PopulateSpecializations.cs" />
-    <Compile Include="Migrations\201805061736020_PopulateSpecializations.Designer.cs">
-      <DependentUpon>201805061736020_PopulateSpecializations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805081355082_AddKeyToAppointment.cs" />
-    <Compile Include="Migrations\201805081355082_AddKeyToAppointment.Designer.cs">
-      <DependentUpon>201805081355082_AddKeyToAppointment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805081630225_DropAppointment.cs" />
-    <Compile Include="Migrations\201805081630225_DropAppointment.Designer.cs">
-      <DependentUpon>201805081630225_DropAppointment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805091329029_PatientDoctorRelationship.cs" />
-    <Compile Include="Migrations\201805091329029_PatientDoctorRelationship.Designer.cs">
-      <DependentUpon>201805091329029_PatientDoctorRelationship.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805120542006_AddDoctorPrescriptionRelationship.cs" />
-    <Compile Include="Migrations\201805120542006_AddDoctorPrescriptionRelationship.Designer.cs">
-      <DependentUpon>201805120542006_AddDoctorPrescriptionRelationship.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805120727179_RemoveDoctorColumnFromPrescriptions.cs" />
-    <Compile Include="Migrations\201805120727179_RemoveDoctorColumnFromPrescriptions.Designer.cs">
-      <DependentUpon>201805120727179_RemoveDoctorColumnFromPrescriptions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\ViewModel\AccountViewModels.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
     <Compile Include="Core\Models\ApplicationUser.cs" />
@@ -1275,122 +1120,6 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803191753437_InitialModel.resx">
-      <DependentUpon>201803191753437_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803200819525_createPatientTable.resx">
-      <DependentUpon>201803200819525_createPatientTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803200844272_OverrideConventionsForPatient.resx">
-      <DependentUpon>201803200844272_OverrideConventionsForPatient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803221358163_addDateTimeFieldToPatientTable.resx">
-      <DependentUpon>201803221358163_addDateTimeFieldToPatientTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804241358182_dropTokenTable.resx">
-      <DependentUpon>201804241358182_dropTokenTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804301730113_AddDateToBill.resx">
-      <DependentUpon>201804301730113_AddDateToBill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805041134288_ChangeBillToPrescription.resx">
-      <DependentUpon>201805041134288_ChangeBillToPrescription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805051343194_RemoveStringLengthFromMedicine.resx">
-      <DependentUpon>201805051343194_RemoveStringLengthFromMedicine.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805061531423_AddDoctor.resx">
-      <DependentUpon>201805061531423_AddDoctor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805061736020_PopulateSpecializations.resx">
-      <DependentUpon>201805061736020_PopulateSpecializations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805081355082_AddKeyToAppointment.resx">
-      <DependentUpon>201805081355082_AddKeyToAppointment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805081630225_DropAppointment.resx">
-      <DependentUpon>201805081630225_DropAppointment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805091329029_PatientDoctorRelationship.resx">
-      <DependentUpon>201805091329029_PatientDoctorRelationship.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805120542006_AddDoctorPrescriptionRelationship.resx">
-      <DependentUpon>201805120542006_AddDoctorPrescriptionRelationship.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805120727179_RemoveDoctorColumnFromPrescriptions.resx">
-      <DependentUpon>201805120727179_RemoveDoctorColumnFromPrescriptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805290637135_AddIsActiveToApplicationUsers.resx">
-      <DependentUpon>201805290637135_AddIsActiveToApplicationUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805290719331_MakeIsActiveNullable.resx">
-      <DependentUpon>201805290719331_MakeIsActiveNullable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060718571_addAssistant.resx">
-      <DependentUpon>201806060718571_addAssistant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806111714197_replacePrescriptionToOpd.resx">
-      <DependentUpon>201806111714197_replacePrescriptionToOpd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806111720558_PopulateCities.resx">
-      <DependentUpon>201806111720558_PopulateCities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806171814506_addPatientStatus.resx">
-      <DependentUpon>201806171814506_addPatientStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806171842305_populatePatientStatuses.resx">
-      <DependentUpon>201806171842305_populatePatientStatuses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210736135_AddAppointmentAndDoctorAvail.resx">
-      <DependentUpon>201806210736135_AddAppointmentAndDoctorAvail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806240945096_addPatientNavigationToAppointment.resx">
-      <DependentUpon>201806240945096_addPatientNavigationToAppointment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807020415322_addAppointmentLength.resx">
-      <DependentUpon>201807020415322_addAppointmentLength.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807020453235_addAppointmentStatus.resx">
-      <DependentUpon>201807020453235_addAppointmentStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807211511147_dropAppointmentlenght.resx">
-      <DependentUpon>201807211511147_dropAppointmentlenght.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807221612460_dropPatientStatusFromAppt.resx">
-      <DependentUpon>201807221612460_dropPatientStatusFromAppt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808100646153_addAddressToDoctor.resx">
-      <DependentUpon>201808100646153_addAddressToDoctor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808181432118_AddDetailToAppointment.resx">
-      <DependentUpon>201808181432118_AddDetailToAppointment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808191430039_AddAppointmentStatusToAppointment.resx">
-      <DependentUpon>201808191430039_AddAppointmentStatusToAppointment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808210649470_RenameOpdAttandenceToAttendance.resx">
-      <DependentUpon>201808210649470_RenameOpdAttandenceToAttendance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808290402308_addNameToApplicationUser.resx">
-      <DependentUpon>201808290402308_addNameToApplicationUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808301448049_AddPatientAttandenceRelationship.resx">
-      <DependentUpon>201808301448049_AddPatientAttandenceRelationship.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808301500573_MakePatientIdFKRequired.resx">
-      <DependentUpon>201808301500573_MakePatientIdFKRequired.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808311922537_addDobToPatient.resx">
-      <DependentUpon>201808311922537_addDobToPatient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809011405256_dropDobFromPatientTB.resx">
-      <DependentUpon>201809011405256_dropDobFromPatientTB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901031533378_dropAssistantTb.resx">
-      <DependentUpon>201901031533378_dropAssistantTb.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
