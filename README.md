@@ -17,7 +17,7 @@ Clinic web application  to support requirement which is that patients visit clin
 - Open the project with Visual Studio.
 - in `web.config`file change the connection string according to your system.
   ```
-  <connectionString><add name="DefaultConnection" connectionString="data source=Your data source; initial catalog=your db name;Integrated Security=True" providerName="System.Data.SqlClient" /></connectionString>
+  <connectionString><add name="ClinicDB" connectionString="data source=Your data source; initial catalog=ClinicDB;Integrated Security=True" providerName="System.Data.SqlClient" /></connectionString>
   ```
 - In package manager console run the following commands 
     ```
