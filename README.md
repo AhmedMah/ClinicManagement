@@ -14,14 +14,17 @@ Clinic web application  to support requirement which is that patients visit clin
 
 # Running Project
 
-Open project with Visual Studio
-In package manager console run the following commands
-
+- Open the project with Visual Studio.
+- in `web.config`file change the connection string according to your system.
+  ```
+  <connectionString><add name="DefaultConnection" connectionString="data source=Your data source; initial catalog=your db name;Integrated Security=True" providerName="System.Data.SqlClient" /></connectionString>
+  ```
+- In package manager console run the following commands 
+    ```
     - enable-migrations
     -  add-migration "InitialDb"
     -  update-database
-
-Open the database
-in AspNetRoles table add  Administrator and Doctor.
-
-Run the project. Go to   http://localhost:xxxx/Account/Register  to add admin user.
+   ```
+- Open the database
+- In `AspNetRoles` table add  Administrator and Doctor.
+- Run the project. Go to   http://localhost:xxxx/Account/Register  to add admin user.
