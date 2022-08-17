@@ -22,22 +22,22 @@
                         @Html.HiddenFor(model => model.Patient)
 
                         <div class="form-group">
-                            <label class="control-label col-sm-3 col-xs-12">Clinic Remarks</label>
+                            <label class="control-label col-sm-3 col-xs-12">Teacher </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                @Html.TextAreaFor(m => m.ClinicRemarks, new { @class = "form-control col-md-7 col-xs-12", @rows=8 })
+                                @Html.TextAreaFor(m => m.ClinicRemarks, new { @class = "form-control col-md-7 col-xs-12" })
                                 @Html.ValidationMessageFor(m => m.ClinicRemarks)
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-3 col-xs-12">Diagnosis</label>
+                            <label class="control-label col-sm-3 col-xs-12">Subject</label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.TextAreaFor(m => m.Diagnosis, new { @class = "form-control col-md-7 col-xs-12" })
                                 @Html.ValidationMessageFor(m => m.Diagnosis)
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-3 col-xs-12">Second Diagnosis</label>
+                            <label class="control-label col-sm-3 col-xs-12">ClassID</label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.TextAreaFor(m => m.SecondDiagnosis, new { @class = "form-control col-md-7 col-xs-12" })
                                 @Html.ValidationMessageFor(m => m.SecondDiagnosis)
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-3 col-xs-12">Third Diagnosis</label>
+                            <label class="control-label col-sm-3 col-xs-12">Topic Heading</label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.TextAreaFor(m => m.ThirdDiagnosis, new { @class = "form-control col-md-7 col-xs-12" })
                                 @Html.ValidationMessageFor(m => m.ThirdDiagnosis)
@@ -53,9 +53,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-3 col-xs-12">Therapy</label>
+                            <label class="control-label col-sm-3 col-xs-12">Conclusion</label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                @Html.TextAreaFor(m => m.Therapy, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.TextAreaFor(m => m.Therapy, new { @class = "form-control col-md-7 col-xs-12", @rows = 6 })
                                 @Html.ValidationMessageFor(m => m.Therapy)
                             </div>
                         </div>

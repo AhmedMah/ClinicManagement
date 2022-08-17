@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagement", "ClinicManagement\ClinicManagement.csproj", "{27C1D62D-33DD-4615-AA01-EAED607B3178}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement", "ClinicManagement\SchoolManagement.csproj", "{27C1D62D-33DD-4615-AA01-EAED607B3178}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,13 +19,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://programmingwithahmet.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ClinicManagement\\ClinicManagement.csproj
-		SccProjectName1 = ClinicManagement
-		SccLocalPath1 = ClinicManagement
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7ED18628-AE6E-4C1A-A7D5-E4718D18D72D}
 	EndGlobalSection
 EndGlobal

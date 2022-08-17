@@ -14,7 +14,7 @@
                     @Html.AntiForgeryToken()
                     @Html.HiddenFor(m => m.Id)
 
-                    <span class="section">Add Patient</span>
+                    <span class="section">Add Student</span>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Name <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12"> 
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class=" form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">City <span class="required">*</span></label>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Subject <span class="required">*</span></label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 @Html.DropDownListFor(m => m.City, new SelectList(Model.Cities, "Id", "Name"), "Select", new { @class = "form-control col-md-7 col-xs-12" })
                                 @Html.ValidationMessageFor(m => m.City)

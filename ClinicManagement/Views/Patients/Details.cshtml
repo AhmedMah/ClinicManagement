@@ -47,8 +47,9 @@
                         <li> <i class="fa fa-user"><strong>Height:</strong> @Model.Patient.Height</i></li>
                         <li> <i class="fa fa-user"><strong>Weight:</strong> @Model.Patient.Weight</i></li>
                         <li>
-                            <i class="fa fa-map-marker user-profile-icon"></i><strong>Address:</strong> @Model.Patient.Address, @Model.Patient.Cities.Name
+                            <i class="fa fa-map-marker user-profile-icon"></i><strong>Address:</strong> @Model.Patient.Address, 
                         </li>
+                        <li> <i class="fa fa-user"><strong>Subject:</strong> @Model.Patient.Cities.Name</i></li>
 
                         <li>
                             <i class="fa fa-phone"></i><strong>Phone:</strong> @Model.Patient.Phone
@@ -65,7 +66,7 @@
                 <div class="col-md-9 col-sm-9 col-xs-12">
                     <div class="col-md-6 col-sm-6 col-xs-12">
                        <span class="section"> Appointment</span>
-                      <a id="patientID" data-appointment-id="@Model.Patient.Id" href="#"> Patient Appointment</a>  <span class="badge badge-error">@Model.CountAppointments</span> @if (User.IsInRole(RoleName.AdministratorRoleName))
+                      <a id="patientID" data-appointment-id="@Model.Patient.Id" href="#"> Student Appointments</a>  <span class="badge badge-error">@Model.CountAppointments</span> @if (User.IsInRole(RoleName.AdministratorRoleName))
                                                                                                                                                                                    {
                                                                                                                                                                                        <a href="@Url.Action("Create", "Appointments", new {id = Model.Patient.Id})"><i class="fa fa-plus"></i></a>
                                                                                                                                                                                    }
